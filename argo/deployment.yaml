@@ -6,7 +6,7 @@ metadata:
   labels:
     app: gitops-foundations
 spec:
-  replicas: 3
+  replicas: 2
   selector:
     matchLabels:
       app: gitops-foundations
@@ -30,8 +30,8 @@ spec:
           failureThreshold: 2
         resources:
           limits:
-            cpu: 300m
+            cpu: 500m
             memory: 500Mi
           requests:
-            cpu: 300m
+            cpu: 500m
             memory: 500Mi
