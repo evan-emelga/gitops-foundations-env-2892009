@@ -1,10 +1,10 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: gitops-foundations
+  name: gitops-foundations-service-a
   namespace: argocd-exercise
   labels:
-    app: gitops-foundations
+    app: gitops-foundations-service-a
 spec:
   revisionHistoryLimit: 0
   replicas: 2
@@ -12,15 +12,15 @@ spec:
     type: Recreate
   selector:
     matchLabels:
-      app: gitops-foundations
+      app: gitops-foundations-service-a
   template:
     metadata:
       labels:
-        app: gitops-foundations
+        app: gitops-foundations-service-a
     spec:
       containers:
-      - name: gitops-foundations
-        image: delca/gitops-foundations:1.0
+      - name: gitops-foundations-service-a
+        image: delca/gitops-foundations-service-a:1.0
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 8080

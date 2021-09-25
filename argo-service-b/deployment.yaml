@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gitops-foundations-service-b
+  namespace: argocd-exercise
+  labels:
+    app: gitops-foundations-service-b
+spec:
+  revisionHistoryLimit: 0
+  replicas: 2
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app: gitops-foundations-service-b
+  template:
+    metadata:
+      labels:
+        app: gitops-foundations-service-b
+    spec:
+      containers:
+      - name: gitops-foundations-service-b
+        image: delca/gitops-foundations-service-b:1.0
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080
+        livenessProbe:
+          httpGet:
+            path: /actuator/health
+            port: 8080
+          initialDelaySeconds: 15
+          periodSeconds: 15
+          failureThreshold: 4
+        resources:
+          limits:
+            cpu: 500m
+            memory: 500Mi
+          requests:
+            cpu: 500m
+            memory: 500Mi
