@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: gitops-foundations
-        image: delca/gitops-foundations:2.0
+        image: delca/gitops-foundations:1.0
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 8080
@@ -25,9 +25,9 @@ spec:
           httpGet:
             path: /actuator/health
             port: 8080
-          initialDelaySeconds: 5
-          periodSeconds: 10
-          failureThreshold: 2
+          initialDelaySeconds: 15
+          periodSeconds: 15
+          failureThreshold: 4
         resources:
           limits:
             cpu: 500m
