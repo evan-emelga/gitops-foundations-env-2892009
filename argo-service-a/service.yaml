@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: gitops-foundations-service-a
-  namespace: argocd-exercise
+  namespace: argocd-exercise-service-a
 spec:
   type: NodePort
   selector:

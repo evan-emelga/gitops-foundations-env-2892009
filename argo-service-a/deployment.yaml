@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: gitops-foundations-service-a
-  namespace: argocd-exercise
+  namespace: argocd-exercise-service-a
   labels:
     app: gitops-foundations-service-a
 spec:
