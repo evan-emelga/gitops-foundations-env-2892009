@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
       - name: gitops-foundations-service-b
-        image: delca/gitops-foundations-service-b:2.0
+        image: delca/gitops-foundations-service-b:1.0
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 8080
