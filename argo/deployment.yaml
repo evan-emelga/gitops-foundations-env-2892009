@@ -7,6 +7,8 @@ metadata:
     app: gitops-foundations
 spec:
   replicas: 2
+  strategy:
+    type: Recreate
   selector:
     matchLabels:
       app: gitops-foundations
